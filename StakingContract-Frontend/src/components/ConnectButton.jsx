@@ -16,7 +16,6 @@ export function ConnectButton({
   chainStatus = { smallScreen: "icon", largeScreen: "full" },
   showBalance = { smallScreen: false, largeScreen: true },
 }) {
-
   const { disconnect } = useDisconnect();
   return (
     <RainbowKitConnectButton.Custom>
@@ -171,8 +170,8 @@ export function ConnectButton({
                       <DropdownMenuItem onClick={openAccountModal}>
                         Account Details
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={disconnect()}>
-                        <LogOut className="mr-2 h-4 w-4" />
+                      <DropdownMenuItem onClick={openAccountModal}>
+                        <LogOut className="mr-2 h-4 w-4" onClick={disconnect()} />
                         Disconnect
                       </DropdownMenuItem>
                     </DropdownMenuContent>
