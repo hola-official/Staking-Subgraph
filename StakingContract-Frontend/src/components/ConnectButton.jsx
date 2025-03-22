@@ -1,6 +1,5 @@
 import React from "react";
 import { ConnectButton as RainbowKitConnectButton } from "@rainbow-me/rainbowkit";
-import { useDisconnect } from "wagmi";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -16,7 +15,6 @@ export function ConnectButton({
   chainStatus = { smallScreen: "icon", largeScreen: "full" },
   showBalance = { smallScreen: false, largeScreen: true },
 }) {
-  const { disconnect } = useDisconnect();
   return (
     <RainbowKitConnectButton.Custom>
       {({
@@ -171,7 +169,7 @@ export function ConnectButton({
                         Account Details
                       </DropdownMenuItem>
                       <DropdownMenuItem onClick={openAccountModal}>
-                        <LogOut className="mr-2 h-4 w-4" onClick={disconnect()} />
+                        <LogOut className="mr-2 h-4 w-4" />
                         Disconnect
                       </DropdownMenuItem>
                     </DropdownMenuContent>
